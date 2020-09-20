@@ -2,8 +2,12 @@ package com.mycompany.myapp.service.dto;
 
 import java.time.Instant;
 import javax.validation.constraints.*;
-import java.io.Serializable;
 
+import com.mycompany.myapp.domain.TransactionEntity;
+
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 /**
  * A DTO for the {@link com.mycompany.myapp.domain.AccountEntity} entity.
  */
@@ -26,9 +30,17 @@ public class AccountEntityDTO implements Serializable {
     private Double closingBalance;
 
     private Instant createdAt;
-
+    private Set<TransactionEntity> transactionentity;
     
-    public Long getId() {
+    public  Set<TransactionEntity> getTransactionentity() {
+		return transactionentity;
+	}
+
+	public void setTransactionentity(Set<TransactionEntity> transactionentity) {
+		this.transactionentity = transactionentity;
+	}
+
+	public Long getId() {
         return id;
     }
 

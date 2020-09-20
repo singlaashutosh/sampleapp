@@ -23,6 +23,7 @@ public interface AccountEntityMapper extends EntityMapper<AccountEntityDTO, Acco
         }
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setId(id);
+        
         return accountEntity;
     }
 }

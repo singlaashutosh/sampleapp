@@ -47,7 +47,7 @@ public class AccountEntity implements Serializable {
     @Column(name = "created_at")
     private Instant createdAt;
 
-    @OneToMany(mappedBy = "accountEntity")
+    @OneToMany(mappedBy = "accountEntity", fetch=FetchType.EAGER)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<TransactionEntity> transactionEntities = new HashSet<>();
 
