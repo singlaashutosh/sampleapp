@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accountEntity">
+            <h2><span>Account Entity</span> {{ accountEntity.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Code</span></dt>
+                <dd>
+                    <span>{{ accountEntity.code }}</span>
+                </dd>
+                <dt><span>Account Entity Name</span></dt>
+                <dd>
+                    <span>{{ accountEntity.accountEntityName }}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{ accountEntity.description }}</span>
+                </dd>
+                <dt><span>Opening Balance</span></dt>
+                <dd>
+                    <span>{{ accountEntity.openingBalance }}</span>
+                </dd>
+                <dt><span>Closing Balance</span></dt>
+                <dd>
+                    <span>{{ accountEntity.closingBalance }}</span>
+                </dd>
+                <dt><span>Created At</span></dt>
+                <dd>
+                    <span>{{ accountEntity.createdAt }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/account-entity', accountEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
